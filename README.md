@@ -28,7 +28,7 @@
 * 折腾必有风险，所以建议在安装任何一个软件包折腾前务必做好备份工作，以免出现不必要的麻烦。出现任何后果概不负责。
  
 
-##致谢
+## 致谢
 本项目是站在巨人的肩膀上完成的，没有他们不可能有这个项目，他们是：
 
 - [P3TERX](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
