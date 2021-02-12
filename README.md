@@ -4,13 +4,13 @@
 
 利用GitHub Actions实现全自动的 **OpenWrt** ipk软件包在x86-64平台上进行自动编译
 
-### 特性
+## 特性
 
 > * 自动触发，每天检查源码是否存在更新，若更新就自动编译和打包ipk包并发布到Release；
 > * 包含Luci绝大多数常用插件；
 > * 所有软件包均包含依赖ipk，不用再去为了一个依赖ipk东奔西找。
 
-### 食用方法
+## 食用方法
 
  1. 去Release下载zip文件；
  2. 下载后打开压缩包，进入目录 `\packages\x86_64\base` ，将里面所有ipk文件解压到桌面；
@@ -29,9 +29,9 @@
  
 
 ## 致谢
-本项目是站在巨人的肩膀上完成的，没有他们不可能有这个项目，他们是：
+本项目是站在巨人的肩膀上完成的，没有他们的贡献不可能有这个项目，在此表示感谢。他们分别是：
 
-- [P3TERX](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+- [P3TERX](https://p3terx.com/archives/build-openwrt-with-github-actions.html) 可以自行根据他的文章学习然后编译适合自己的OpenWrt。
 - [Microsoft](https://www.microsoft.com)
 - [Microsoft Azure](https://azure.microsoft.com)
 - [GitHub](https://github.com)
