@@ -165,7 +165,7 @@ jobs:
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "::set-output name=status::success"
-        find packages/x86_64 -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/x86-64-IPK.tar.gz
+        find openwrt/bin/packages/x86_64 -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/x86-64-IPK.tar.gz
         echo "  sha256: $(cat ${{ env.FIRMWARE }}/sha256sums | grep -oE "x86-64-IPK.tar.gz" | grep -oE "\w{64}")" >> release.txt
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
