@@ -156,17 +156,17 @@ jobs:
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
 
-    - name: Generate release tag
+    - name: Generate release tag and unpack IPK Files
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
         echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
-        echo "- 请下载带有 bin 字样的压缩包！" >> release.txt
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "::set-output name=status::success"
-
+        find ${{ env.FIRMWARE }} -name "*.ipk" | xargs tar czvf ${{ env.FIRMWARE }}/x86-64-IPK.tar.gz
+        echo "  sha256: $(cat ${{ env.FIRMWARE }}/sha256sums | grep -oE "x86-64-IPK.tar.gz" | grep -oE "\w{64}")" >> release.txt
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
@@ -175,7 +175,7 @@ jobs:
       with:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*.ipk
+        files: ${{ env.FIRMWARE }}/x86-64-IPK.tar.gz
 
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
