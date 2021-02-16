@@ -14,8 +14,8 @@
 
 ## 食用方法
 
- 1. 去Release下载文件 `x86-64-IPK.tar.gz` ；
- 2. 下载后打开压缩包，进入目录 `openwrt\packages\x86_64\` ，里面有几个文件夹，然后将文件夹里面所有的ipk文件解压到桌面（桌面新建文件夹）；
+ 1. 去Release下载文件 `x86-64-IPK.tar.gz` ，并确认SHA256是否匹配；
+ 2. 确认文件完整后打开压缩包，进入目录 `openwrt\packages\x86_64\` ，里面有几个文件夹，然后将文件夹里面所有的ipk文件解压到桌面（桌面新建文件夹）；
  3. 寻找需要的软件包并复制软件包全名（例如passwall）；
  4. 使用WinScp登录OpenWrt，切换到tmp目录下，将需要的软件包拖入此目录；
  5. 登录OpenWrt SSH，输入 `cd /tmp` 切换到tmp目录；
