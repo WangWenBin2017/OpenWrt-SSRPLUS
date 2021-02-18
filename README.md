@@ -36,6 +36,7 @@
 本项目是站在巨人的肩膀上完成的，没有他们的贡献不可能有这个项目，在此表示感谢。他们分别是：
 
 - [P3TERX](https://p3terx.com/archives/build-openwrt-with-github-actions.html) 可以自行根据他的文章学习然后编译适合自己的OpenWrt。
+- [rabbitwit](https://github.com/rabbitwit/test-xiaoyu/blob/a5e8c6b96704d78ee042c761adc8c08acb464008/.github/workflows/build-Lienol-openwrt.yml#L164)
 - [Microsoft](https://www.microsoft.com)
 - [Microsoft Azure](https://azure.microsoft.com)
 - [GitHub](https://github.com)
